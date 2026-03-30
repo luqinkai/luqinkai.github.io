@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>企业官网</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei",sans-serif;background:#f6f6f6;color:#333}
+.container{max-width:1000px;margin:0 auto;padding:20px}
+
+.section{
+  background:#fff;
+  border-radius:10px;
+  margin-bottom:30px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05)
+}
+.title{
+  font-size:24px;
+  font-weight:bold;
+  padding:20px;
+  background:#2b6fec;
+  color:#fff
+}
+
+/* 图片左、文字右 */
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  padding:20px;
+  gap:20px
+}
+.row img{
+  width:280px;
+  height:auto;
+  border-radius:8px
+}
+.row .text{
+  flex:1;
+  min-width:300px;
+  line-height:1.8;
+  font-size:16px
+}
+
+.contact{
+  text-align:center;
+  padding:30px;
+  background:#2b6fec;
+  color:#fff;
+  font-size:18px
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- 公司简介 -->
+  <div class="section">
+    <div class="title">公司简介</div>
+    <div class="row">
+      <img src="圣地哥.jpg" alt="公司图片">
+      <div class="text">
+        本公司成立于xxxx，专业从事跨境外贸、品牌代理、供应链服务，拥有多年行业经验，服务客户遍布全球。始终坚持诚信为本、客户至上的经营理念，为合作伙伴提供稳定、高效、优质的一站式服务。<br><br>
+        公司拥有专业团队、完善渠道与成熟体系，可满足各类企业定制化需求，持续为客户创造价值。
+      </div>
+    </div>
+  </div>
+
+  <!-- 企业实力 -->
+  <div class="section">
+    <div class="title">企业实力</div>
+    <div class="row">
+      <img src="实力.jpg" alt="企业实力图片">
+      <div class="text">
+        公司具备强大供应链资源，与多个知名品牌工厂达成深度合作，拥有稳定货源与价格优势。<br><br>
+        团队具备专业运营、营销、售后能力，可快速响应市场变化，保障业务高效运转。多年市场积累，让我们拥有更强的抗风险能力与服务能力。
+      </div>
+    </div>
+  </div>
+
+  <!-- 联系电话 -->
+  <div class="contact">
+    联系电话：138 0000 0000
+  </div>
+
+</div>
+
+</body>
+</html>
