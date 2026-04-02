@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品推荐 | Qingdao New Stone Imp&Exp co.,Ltd.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+        }
+        /* 顶部黑色栏只保留公司名 */
+        .top-bar {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .company-name {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .company-name-zh {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .company-name-en {
+            font-size: 14px;
+            margin-top: 4px;
+            opacity: 0.9;
+        }
+
+        /* 导航栏样式 - 放到白色区域 */
+        .nav-tabs {
+            display: flex;
+            gap: 5px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .nav-tab {
+            padding: 10px 20px;
+            background: #fff;
+            color: #333;
+            font-size: 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .nav-tab.active {
+            background-color: #2E7D32;
+            color: white;
+        }
+        .nav-tab:hover {
+            background: #e0e0e0;
+        }
+
+        /* 右上角悬浮按钮 */
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        .social-item {
+            position: relative;
+        }
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .social-btn.help-btn {
+            background: #2E7D32;
+            color: white;
+        }
+        .hover-card {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 10px;
+            display: none;
+            z-index: 999;
+            text-align: center;
+        }
+        .hover-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .hover-card p {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #333;
+        }
+        .social-item:hover .hover-card {
+            display: block;
+        }
+
+        /* 主体内容 */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .intro-text {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+            margin: 20px 0;
+            text-align: justify;
+        }
+        /* 产品按钮区 */
+        .product-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .product-btn {
+            padding: 15px 20px;
+            background: #2E7D32;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+            min-width: 160px;
+        }
+        .product-btn:hover {
+            background: #27672a;
+        }
+        /* 产品展示区 */
+        .product-image-section {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .product-img {
+            max-width: 350px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .image-caption {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #222;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-col h3 {
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+        .footer-col p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .product-image-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部黑色栏 -->
+    <div class="top-bar">
+        <div class="company-name">
+            <div class="company-name-zh">青岛圣地歌进出口有限公司</div>
+            <div class="company-name-en">Qingdao New Stone Imp&Exp co.,Ltd.</div>
+        </div>
+        <!-- 右侧悬浮按钮 -->
+        <div class="social-links">
+            <div class="social-item">
+                <button class="social-btn">💬</button>
+                <div class="hover-card">
+                    <img src="WhatsApp二维码.png" alt="WhatsApp">
+                    <p>WhatsApp 扫码联系 | Scan to Contact</p>
+                </div>
+            </div>
+            <div class="social-item">
+                <button class="social-btn">📧</button>
+                <div class="hover-card">
+                    <img src="邮箱.png" alt="Email">
+                    <p>sales1@sdgtrading.cn</p>
+                </div>
+            </div>
+            <div class="social-item">
+                <button class="social-btn">📞</button>
+                <div class="hover-card">
+                    <img src="电话二维码.png" alt="Phone">
+                    <p>📞 138-xxxx-8888</p>
+                </div>
+            </div>
+            <div class="social-item">
+                <button class="social-btn help-btn">联系我们 | Contact Us</button>
+                <div class="hover-card">
+                    <img src="圣地歌进出口有限公司.jpg" alt="Address">
+                    <p>📍 山东省青岛市 | Qingdao, Shandong Province</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主体内容 -->
+    <div class="container">
+        <!-- 导航栏放到第一段文字上方白色区域 -->
+        <div class="nav-tabs">
+            <a href="公司介绍.html" class="nav-tab">公司介绍 | Company Introduction</a>
+            <a href="产品推荐.html" class="nav-tab active">产品推荐 | Recommended Products</a>
+            <a href="经营产品.html" class="nav-tab">经营产品 | Operating products</a>
+            <a href="工厂考察.html" class="nav-tab">工厂考察 | Factory Visit</a>
+            <a href="关于我们.html" class="nav-tab">关于我们 | About Us</a>
+        </div>
+
+        <!-- 第一段介绍 -->
+        <p class="intro-text">
+            我司主营医疗用品、检测仪器及耗材，资质齐全，符合国际标准，支持外贸出口，可提供完整的报关资料与检测报告。<br>
+            Our company mainly deals in medical supplies, testing instruments and consumables with complete qualifications, in line with international standards, supporting foreign trade export, and providing complete customs declaration data and test reports.
+        </p>
+
+        <!-- 第二段介绍 -->
+        <p class="intro-text">
+            公司拥有多年行业经验，产品覆盖医院临床、实验室检测、家庭护理等多个领域，凭借优质的产品质量与完善的售后服务，赢得了国内外客户的一致好评。<br>
+            The company has many years of industry experience, products cover hospital clinical, laboratory testing, home care and other fields. With high-quality products and perfect after-sales service, we have won high praise from customers at home and abroad.
+        </p>
+
+        <!-- 产品按钮区 -->
+        <div class="product-buttons">
+            <button class="product-btn" onclick="showProduct('c13')">C13/Helicobacter Pylori</button>
+            <button class="product-btn" onclick="showProduct('glove')">呼吸机/ventilator</button>
+            <button class="product-btn" onclick="showProduct('syringe')">试纸/rapid test strip</button>
+            <button class="product-btn" onclick="showProduct('mask')">呼吸面罩/Respiratory Mask</button>
+            <button class="product-btn" onclick="showProduct('infusion')">急救包/First Aid Kit</button>
+        </div>
+
+        <!-- 产品展示区 -->
+        <div class="product-image-section">
+            <div>
+                <img id="productImage" class="product-img" src="C13.jpg" alt="医疗设备">
+                <p class="image-caption" id="imageCaption">HGIR Force 200 13C infrared spectrometer</p>
+            </div>
+            <div>
+                <p class="intro-text" id="productDesc">
+                    • Compact 2 channel cubic system (1 patients) / 紧凑型2通道立方系统（1台患者设备）<br>
+                    • Management system through simple software / 通过简易软件进行管理系统<br>
+                    • Self check, calibration, patient archive, daily work list / 自检、校准、患者档案、每日工作清单<br>
+                    • Auto check for voltage evaluation on 12C / 13C / 自动检测12C/13C的呼气评估<br>
+                    • Response within 3 minutes / 3分钟内出结果<br>
+                    • Report with DOB + outcome (positive / negative) / 报告包含DOB值 + 结果（阳性/阴性）<br>
+                    • Does not require dedicated personnel / 无需专职人员操作<br>
+                    • No limit of daily test execution / 每日测试数量无限制<br>
+                    • Automatic air circuit cleaning with each test / 每次测试自动进行气路清洗<br>
+                    • Latest generation infrared reading system (NDIR) / 最新一代红外读取系统（NDIR）
+                </p>
+            </div>
+        </div>
+
+        <!-- 底部说明 -->
+        <p class="intro-text">
+            产品已出口至全球30多个国家和地区，包括欧洲、东南亚、中东及非洲市场。我们支持OEM定制包装与快速物流发货，确保您的订单准时交付。<br>
+            Products have been exported to more than 30 countries and regions, including Europe, Southeast Asia, Middle East and Africa. We support OEM custom packaging and fast logistics delivery to ensure on-time delivery of your orders.
+        </p>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>联系我们 | Contact Us</h3>
+                <p>地址：山东省青岛市 | Address: Qingdao City, Shandong Province</p>
+                <p>电话：0532-xxxxxxx | Tel: 0532-xxxxxxx</p>
+                <p>邮箱：sales1@sdgtrading.cn | Email: sales1@sdgtrading.cn</p>
+            </div>
+            <div class="footer-col">
+                <h3>服务地区 | Service Area</h3>
+                <p>国内：全国各省市医疗机构 | Domestic: Medical institutions nationwide</p>
+                <p>出口：欧洲、东南亚、中东、非洲 | Export: Europe, Southeast Asia, Middle East, Africa</p>
+            </div>
+            <div class="footer-col">
+                <h3>资质认证 | Qualification Certification</h3>
+                <p>ISO13485 医疗器械质量管理体系 | ISO13485 Medical Device QMS</p>
+                <p>CE / FDA 出口认证 | CE / FDA Export Certification</p>
+                <p>国家药监局备案产品 | NMPA Registered Products</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 修复：独立C13、呼吸面罩、急救包，互不覆盖
+        const products = {
+    c13: {
+        img: "C13.jpg",
+        caption: "HGIR Force 200 13C infrared spectrometer",
+        desc: "• Compact 2 channel cubic system (1 patients) / 紧凑型2通道立方系统（1台患者设备）\n• Management system through simple software / 通过简易软件进行管理系统\n• Self check, calibration, patient archive, daily work list / 自检、校准、患者档案、每日工作清单\n• Auto check for voltage evaluation on 12C / 13C / 自动检测12C/13C的呼气评估\n• Response within 3 minutes / 3分钟内出结果\n• Report with DOB + outcome (positive / negative) / 报告包含DOB值 + 结果（阳性/阴性）\n• Does not require dedicated personnel / 无需专职人员操作\n• No limit of daily test execution / 每日测试数量无限制\n• Automatic air circuit cleaning with each test / 每次测试自动进行气路清洗\n• Latest generation infrared reading system (NDIR) / 最新一代红外读取系统（NDIR）"
+    },
+    glove: {
+        img: "呼吸机.jpg",
+        caption: "呼吸机/ventilator",
+        desc: "⚠️可改：呼吸机详细介绍文案 | Ventilator Detailed Description"
+    },
+    syringe: {
+        img: "试纸.jpg",
+        caption: "试纸/rapid test strip",
+        desc: "⚠️可改：试纸详细介绍文案 | Rapid Test Strip Detailed Description"
+    },
+    mask: {
+        img: "呼吸面罩.png",
+        caption: "呼吸面罩/Respiratory Mask",
+        desc: "⚠️可改：呼吸面罩详细介绍文案 | Respiratory Mask Detailed Description"
+    },
+    infusion: {
+        img: "急救包.jpg",
+        caption: "急救包/First Aid Kit",
+        desc: "⚠️可改：急救包详细介绍文案 | First Aid Kit Detailed Description"
+    }
+};
+
+        function showProduct(key) {
+            const p = products[key];
+            document.getElementById('productImage').src = p.img;
+            document.getElementById('imageCaption').innerText = p.caption;
+            document.getElementById('productDesc').innerText = p.desc;
+        }
+    </script>
+</body>
+</html>

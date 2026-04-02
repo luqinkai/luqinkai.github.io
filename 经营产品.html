@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>经营产品 | Operating Products - 青岛圣地歌进出口有限公司</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+        }
+        /* 顶部黑色栏只保留公司名 */
+        .top-bar {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .company-name {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .company-name-zh {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .company-name-en {
+            font-size: 14px;
+            margin-top: 4px;
+            opacity: 0.9;
+        }
+
+        /* 导航栏样式 - 放到白色区域 */
+        .nav-tabs {
+            display: flex;
+            gap: 5px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .nav-tab {
+            padding: 10px 20px;
+            background: #fff;
+            color: #333;
+            font-size: 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .nav-tab.active {
+            background-color: #2E7D32;
+            color: white;
+        }
+        .nav-tab:hover {
+            background: #e0e0e0;
+        }
+
+        /* 右上角悬浮按钮 */
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        .social-item {
+            position: relative;
+        }
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .social-btn.help-btn {
+            background: #2E7D32;
+            color: white;
+        }
+        .hover-card {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 10px;
+            display: none;
+            z-index: 999;
+            text-align: center;
+        }
+        .hover-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .hover-card p {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #333;
+        }
+        .social-item:hover .hover-card {
+            display: block;
+        }
+
+        /* 主体内容 */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .intro-text {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+            margin: 20px 0;
+            text-align: justify;
+        }
+        /* 产品展示区域 */
+        .products-section {
+            margin: 40px 0;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .product-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .product-item h3 {
+            color: #2E7D32;
+            margin-bottom: 10px;
+        }
+        .product-item p {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #222;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-col h3 {
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+        .footer-col p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部黑色栏 -->
+    <div class="top-bar">
+        <div class="company-name">
+            <div class="company-name-zh">青岛圣地歌进出口有限公司</div>
+            <div class="company-name-en">Qingdao New Stone Imp&Exp co.,Ltd.</div>
+        </div>
+        <!-- 右侧悬浮按钮 -->
+        <div class="social-links">
+            <div class="social-item">
+                <button class="social-btn">💬</button>
+                <div class="hover-card">
+                    <img src="WhatsApp二维码.png" alt="WhatsApp">
+                    <p>WhatsApp 扫码联系 | Scan to Contact</p>
+                </div>
+            </div>
+            <div class="social-item">
+                <button class="social-btn">📧</button>
+                <div class="hover-card">
+                    <img src="邮箱.png" alt="Email">
+                    <p>sales1@sdgtrading.cn</p>
+                </div>
+            </div>
+            <div class="social-item">
+                <button class="social-btn">📞</button>
+                <div class="hover-card">
+                    <img src="电话二维码.png" alt="Phone">
+                    <p>📞 138-xxxx-8888</p>
+                </div>
+            </div>
+            <div class="social-item">
+                <button class="social-btn help-btn">联系我们 | Contact Us</button>
+                <div class="hover-card">
+                    <img src="圣地歌进出口有限公司.jpg" alt="Address">
+                    <p>📍 山东省青岛市 | Qingdao, Shandong Province</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主体内容 -->
+    <div class="container">
+        <!-- 导航栏放到第一段文字上方白色区域 -->
+        <div class="nav-tabs">
+            <a href="公司介绍.html" class="nav-tab">公司介绍 | Company Introduction</a>
+            <a href="产品推荐.html" class="nav-tab">产品推荐 | Recommended Products</a>
+            <a href="经营产品.html" class="nav-tab active">经营产品 | Operating products</a>
+            <a href="工厂考察.html" class="nav-tab">工厂考察 | Factory Visit</a>
+            <a href="关于我们.html" class="nav-tab">关于我们 | About Us</a>
+        </div>
+
+        <!-- 经营产品标题 -->
+        <div class="products-section">
+            <h2 class="section-title">经营产品 | Operating Products</h2>
+            
+            <!-- 产品介绍 -->
+            <p class="intro-text">
+                我司经营多种医疗用品、检测仪器及耗材，产品覆盖医院临床、实验室检测、家庭护理等多个领域。以下是我们的主要产品系列：<br>
+                Our company operates a variety of medical supplies, testing instruments and consumables, covering hospital clinical, laboratory testing, home care and other fields. The following are our main product series:
+            </p>
+
+            <!-- 产品网格 -->
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="C13.jpg" alt="C13幽门螺杆菌检测仪">
+                    <h3>C13幽门螺杆菌检测仪</h3>
+                    <p>用于检测幽门螺杆菌感染，采用红外光谱技术，快速准确，操作简便。<br>
+                    Used for detecting Helicobacter pylori infection, using infrared spectroscopy technology, fast and accurate, easy to operate.</p>
+                </div>
+                <div class="product-item">
+                    <img src="呼吸机.jpg" alt="呼吸机">
+                    <h3>呼吸机</h3>
+                    <p>适用于医院和家庭使用的呼吸机，提供呼吸支持和治疗。<br>
+                    Ventilator suitable for hospital and home use, providing respiratory support and treatment.</p>
+                </div>
+                <div class="product-item">
+                    <img src="试纸.jpg" alt="快速检测试纸">
+                    <h3>快速检测试纸</h3>
+                    <p>用于各种疾病的快速检测，操作简单，结果准确。<br>
+                    Used for rapid detection of various diseases, simple operation, accurate results.</p>
+                </div>
+                <div class="product-item">
+                    <img src="呼吸面罩.png" alt="呼吸面罩">
+                    <h3>呼吸面罩</h3>
+                    <p>用于呼吸机配套使用的呼吸面罩，舒适贴合，密封性能好。<br>
+                    Respiratory mask used with ventilator, comfortable fit, good sealing performance.</p>
+                </div>
+                <div class="product-item">
+                    <img src="急救包.jpg" alt="急救包">
+                    <h3>急救包</h3>
+                    <p>包含各种急救用品，适用于家庭、企业和医疗机构。<br>
+                    Contains various first aid supplies, suitable for families, enterprises and medical institutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>联系我们 | Contact Us</h3>
+                <p>地址：山东省青岛市 | Address: Qingdao City, Shandong Province</p>
+                <p>电话：0532-xxxxxxx | Tel: 0532-xxxxxxx</p>
+                <p>邮箱：sales1@sdgtrading.cn | Email: sales1@sdgtrading.cn</p>
+            </div>
+            <div class="footer-col">
+                <h3>服务地区 | Service Area</h3>
+                <p>国内：全国各省市医疗机构 | Domestic: Medical institutions nationwide</p>
+                <p>出口：欧洲、东南亚、中东、非洲 | Export: Europe, Southeast Asia, Middle East, Africa</p>
+            </div>
+            <div class="footer-col">
+                <h3>资质认证 | Qualification Certification</h3>
+                <p>ISO13485 医疗器械质量管理体系 | ISO13485 Medical Device QMS</p>
+                <p>CE / FDA 出口认证 | CE / FDA Export Certification</p>
+                <p>国家药监局备案产品 | NMPA Registered Products</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏激活状态管理
+        document.addEventListener('DOMContentLoaded', function() {
+            const navTabs = document.querySelectorAll('.nav-tab');
+            navTabs.forEach(tab => {
+                if (tab.href === window.location.href) {
+                    tab.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
